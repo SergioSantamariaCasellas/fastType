@@ -174,8 +174,6 @@ hiddenInput.addEventListener('input', () => {
     }
 });
 
-
-
 function switchCode() {
     if (!isGameActive) return;
     
@@ -191,14 +189,11 @@ function switchCode() {
     errors = 0;
 }
 
-
-
 const switchBtn = document.getElementById('switch-btn');
 switchBtn.addEventListener('click', switchCode);
 startBtn.addEventListener('click', startGame);
 endBtn.addEventListener('click', () => endGame(false));
 restartBtn.addEventListener('click', restartGame);
 backBtn.addEventListener('click', () => window.location.href = 'index.html');
-
 
 startGame();
