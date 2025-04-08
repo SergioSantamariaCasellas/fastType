@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --start-btn-color: #6B8E9F;     
+    --restart-btn-color: #A78C8C;   
+    --end-btn-color: #8C6B6B;       
+    --back-btn-color: #6B8E23;      
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #f0e6e6;
+    color: #5a4e4e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff5f5;
+    padding: clamp(1rem, 4vw, 2rem);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: clamp(90%, 95%, 1200px);
+    max-width: 1200px;
+}
+
+h1, h2 {
+    color: #a18c8c;
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.language-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 2vw, 2rem);
+    margin-top: 2rem;
+}
+
+.language-btn {
+    background-color: #a6c9a6;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: clamp(0.5rem, 2vw, 0.7rem) clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-btn:hover {
+    background-color: #95b895;
+    transform: scale(1.05);
+}
+
+#language-display {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: bold;
+    color: #7a6c6c;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #f0e6e6;
+    border-radius: 10px;
+}
+
+#stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+#code-display {
+    background-color: #f9f1f1;
+    border: 2px solid #e6d7d7;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    white-space: pre-wrap;
+    min-height: clamp(100px, 30vh, 200px);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    margin-bottom: 1.5rem;
+}
+
+.navigation-container {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e6d7d7;
+}
+
+#start-btn, #end-btn, #restart-btn, #back-btn, #switch-btn {
+    border: none;
+    padding: clamp(0.5rem, 2vw, 0.7rem) clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #f0f0f0;
+}
+
+#start-btn {
+    background-color: var(--start-btn-color);
+}
+
+#start-btn:hover {
+    background-color: color-mix(in srgb, var(--start-btn-color) 80%, white);
+}
+
+#restart-btn {
+    background-color: var(--restart-btn-color);
+}
+
+#restart-btn:hover {
+    background-color: color-mix(in srgb, var(--restart-btn-color) 80%, white);
+}
+
+#end-btn {
+    background-color: var(--end-btn-color);
+}
+
+#end-btn:hover {
+    background-color: color-mix(in srgb, var(--end-btn-color) 80%, white);
+}
+
+#back-btn {
+    background-color: var(--back-btn-color);
+}
+
+#back-btn:hover {
+    background-color: color-mix(in srgb, var(--back-btn-color) 80%, white);
+}
+
+#switch-btn {
+    background-color: #A78C8C;  
+    color: #f0f0f0;
+}
+
+#switch-btn:hover {
+    background-color: color-mix(in srgb, #A78C8C 80%, white);
+}
+
+#start-btn:disabled, 
+#restart-btn:disabled, 
+#end-btn:disabled {
+    background-color: #B0B0B0;
+    color: #E0E0E0;
+    cursor: not-allowed;
+}
+
+#hidden-input {
+    position: absolute;
+    left: -9999px;
+}
+
+.correct {
+    color: #7fb069;
+}
+
+.incorrect {
+    color: #d16666;
+    text-decoration: underline;
+}
+
+.results {
+    background-color: #f9f1f1;
+    border: 2px solid #e6d7d7;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .container {
+        width: 95%;
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .language-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #start-btn, #end-btn, #restart-btn, #switch-btn, .language-btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+

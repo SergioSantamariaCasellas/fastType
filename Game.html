@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeSpeed - Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TypeSpeed</h1>
+        <div id="language-display"></div>
+        <div id="stats">
+            <span id="errors">Errors: 0</span>
+            <span id="time">Time: 0.0s</span>
+        </div>
+        <div id="code-display"></div>
+        <input type="text" id="hidden-input" autocomplete="off">
+        <div class="button-container">
+            <button id="start-btn">Start Game</button>
+            <button id="end-btn" disabled>End Game</button>
+            <button id="restart-btn" disabled>Restart Game</button>
+            <button id="switch-btn">Switch</button>
+        </div>
+        
+        <div class="navigation-container">
+            <button id="back-btn">Back to Language Selection</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
